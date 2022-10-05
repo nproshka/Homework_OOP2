@@ -1,4 +1,5 @@
 import Cars.*;
+import Drivers.Driver;
 
 public class Main {
     public static void main(String[] args) {
@@ -62,6 +63,14 @@ public class Main {
             truck.getMaxSpeed();
             System.out.println();
         }
+
+        Driver<EasyCars> Vladimir = new Driver<EasyCars>("Vladimir", "B", 3);
+        Driver<Buses> Andrey = new Driver<Buses>("Andrey", "D", 7);
+        Driver<Trucks> Alexander = new Driver<Trucks>("Alexander", "C", 5);
+        Vladimir.getInfo(easyCars[0]);
+        Andrey.getInfo(buses[1]);
+        Alexander.getInfo(trucks[2]);
+
 
     }
 }

@@ -6,4 +6,5 @@ public interface Competing {
     void getBestLapTime();
 
     void getMaxSpeed();
+
 }

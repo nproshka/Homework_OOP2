@@ -1,6 +1,8 @@
 package Cars;
 
-public class EasyCars extends Cars implements Competing {
+import java.util.Locale;
+
+public class EasyCars extends Cars implements Competing  {
     public EasyCars(String brand, String model, double engineCapacity) {
         super(brand, model, engineCapacity);
     }
