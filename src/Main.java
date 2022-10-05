@@ -37,5 +37,31 @@ public class Main {
         for (Buses bus : buses) {
             System.out.println(bus);
         }
+
+        for (EasyCars easyCar : easyCars) {
+            easyCar.stayOnPitStop();
+            easyCar.getBestLapTime();
+            easyCar.getMaxSpeed();
+            System.out.println();
+        }
+
+        System.out.println();
+
+        for (Buses bus : buses) {
+            bus.stayOnPitStop();
+            bus.getBestLapTime();
+            bus.getMaxSpeed();
+            System.out.println();
+        }
+
+        System.out.println();
+
+        for (Trucks truck : trucks) {
+            truck.stayOnPitStop();
+            truck.getBestLapTime();
+            truck.getMaxSpeed();
+            System.out.println();
+        }
+
     }
 }
