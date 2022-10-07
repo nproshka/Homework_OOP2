@@ -1,18 +1,19 @@
 package Drivers;
 
 import Cars.Cars;
-import Cars.Competing;
 
-public class Driver <E extends Cars & Competing> {
+public abstract class Driver <E extends Cars> {
 
     private String name;
     private String typeDriveLicense;
     private int experience;
+    private E vehicle;
 
-    public Driver(String name, String driveLicense, int experience) {
+    public Driver(String name, String driveLicense, int experience, E vehicle) {
         this.name = name;
         this.typeDriveLicense = driveLicense;
         this.experience = experience;
+        this.vehicle = vehicle;
     }
 
     public void startMoving(E car) {
@@ -46,5 +47,15 @@ public class Driver <E extends Cars & Competing> {
         this.experience = experience;
     }
 
+    public E getVehicle() {
+        return vehicle;
+    }
+    public void setVehicle(E vehicle) {
+        this.vehicle = vehicle;
+    }
 
+    @Override
+    public String toString() {
+        return "Водитель " + getName() + " с категорией " + getTypeDriveLicenseDriveLicense() + ", управляет автомобилем "+ getVehicle() + " и будет учавствовать в заезде";
+    }
 }

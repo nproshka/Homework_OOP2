@@ -1,5 +1,8 @@
 import Cars.*;
 import Drivers.Driver;
+import Drivers.DriverB;
+import Drivers.DriverC;
+import Drivers.DriverD;
 
 public class Main {
     public static void main(String[] args) {
@@ -64,12 +67,12 @@ public class Main {
             System.out.println();
         }
 
-        Driver<EasyCars> Vladimir = new Driver<EasyCars>("Vladimir", "B", 3);
-        Driver<Buses> Andrey = new Driver<Buses>("Andrey", "D", 7);
-        Driver<Trucks> Alexander = new Driver<Trucks>("Alexander", "C", 5);
-        Vladimir.getInfo(easyCars[0]);
-        Andrey.getInfo(buses[1]);
-        Alexander.getInfo(trucks[2]);
+        DriverB vladimir = new DriverB ("Vladimir", "B", 3, easyCars[0]);
+        DriverD andrey = new DriverD ("Andrey", "D", 7, buses[1]);
+        DriverC alexander = new DriverC ("Alexander", "C", 5, trucks[3]);
+        System.out.println(alexander);
+        System.out.println(andrey);
+        System.out.println(vladimir);
 
 
     }
