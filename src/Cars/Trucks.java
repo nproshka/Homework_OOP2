@@ -1,8 +1,27 @@
 package Cars;
 
 public class Trucks extends Cars implements Competing {
-    public Trucks(String brand, String model, double engineCapacity) {
+    public enum LoadCapacity {
+        N1("Масса до 3,5 тонн"),
+        N2("Масса свыше 3,5 до 12 тонн"),
+        N3("Масса свыше 12 тонн");
+
+        private final String weight;
+
+        LoadCapacity(String weight) {
+            this.weight = weight;
+        }
+
+        public String getWeight() {
+            return weight;
+        }
+    }
+
+    private final LoadCapacity loadCapacity;
+
+    public Trucks(String brand, String model, double engineCapacity, LoadCapacity loadCapacity) {
         super(brand, model, engineCapacity);
+        this.loadCapacity = loadCapacity;
     }
 
     @Override
@@ -13,6 +32,15 @@ public class Trucks extends Cars implements Competing {
     @Override
     public void endMoving() {
         System.out.println("Заканчиваю движение");
+    }
+
+    @Override
+    public void defineType() {
+        if (loadCapacity == null) {
+            System.out.println("Недостаточно данных");
+        } else {
+            System.out.println("Грузоподъёмность " + loadCapacity.weight);
+        }
     }
 
     @Override

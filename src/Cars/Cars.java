@@ -26,6 +26,8 @@ public abstract class Cars {
     public abstract void startMoving();
     public abstract void endMoving();
 
+    public abstract void defineType();
+
     public String getBrand() {
         return brand;
     }
