@@ -7,7 +7,7 @@ import Cars.Buses.PlaceCapacity;
 import Cars.Trucks.LoadCapacity;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         EasyCars[] easyCars = new EasyCars[4];
         easyCars[0] = new EasyCars("Volkswagen", "Taos", 1.4, null);
@@ -82,7 +82,7 @@ public class Main {
 
         System.out.println();
 
-        Registration.register("SmaSh2R", "12345!G", "12345G");
+        boolean check = Registration.register("SmaSh2R", "12345!G", "12345G");
 
         System.out.println();
 

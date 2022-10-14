@@ -3,7 +3,7 @@ public class Registration {
     public static final String RIGHT_SYMBOLS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTYVWXYZ0123456789_";
 
 
-    public static boolean register(String login, String password, String confirmPassword) throws WrongPasswordException, WrongLoginException {
+    public static boolean register(String login, String password, String confirmPassword) {
 
         try {
             checkLogin(login);
