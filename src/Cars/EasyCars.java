@@ -22,6 +22,11 @@ public class EasyCars extends Cars implements Competing  {
     }
 
     @Override
+    public boolean diagnosticCar() {
+        return !(getEngineCapacity() < 2.0);
+    }
+
+    @Override
     public void startMoving() {
         System.out.println("Начинаю движение");
     }

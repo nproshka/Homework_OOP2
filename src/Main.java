@@ -27,6 +27,43 @@ public class Main {
         buses[2] = new Buses("Kia", "Granbird", 17.2, PlaceCapacity.VERY_LARGE);
         buses[3] = new Buses("ЛиАЗ", "5256", 8.3, PlaceCapacity.LARGE);
 
+        for (int i = 0; i < easyCars.length; i++) {
+            try {
+                if (!easyCars[i].diagnosticCar()) {
+                    throw new RuntimeException("Автомобиль " + easyCars[i].getBrand() + " " + easyCars[i].getModel() + " диагностику не прошел");
+                }
+            }
+            catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        System.out.println();
+
+        for (int i = 0; i < trucks.length; i++) {
+            try {
+                if (!trucks[i].diagnosticCar()) {
+                    throw new RuntimeException("Автомобиль " + trucks[i].getBrand() + " " + trucks[i].getModel() + " диагностику не прошел");
+                }
+            }
+            catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        System.out.println();
+
+        for (int i = 0; i < buses.length; i++) {
+            try {
+                if (!buses[i].diagnosticCar()) {
+                    throw new RuntimeException("Автомобиль " + buses[i].getBrand() + " " + buses[i].getModel() + " диагностику не прошел");
+                }
+            }
+            catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        System.out.println();
 
         for (EasyCars easyCar : easyCars) {
             System.out.println(easyCar);
@@ -92,9 +129,7 @@ public class Main {
 
         Registration.register("SmaSh!R", "12345!G", "12345G");
 
+
     }
-
-
-
 
 }

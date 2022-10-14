@@ -44,6 +44,11 @@ public class Trucks extends Cars implements Competing {
     }
 
     @Override
+    public boolean diagnosticCar() {
+        return !(getEngineCapacity() < 5.0);
+    }
+
+    @Override
     public void stayOnPitStop() {
         System.out.println("Это " + getBrand() + " " + getModel() + " встаю на ПитСтоп!");
     }

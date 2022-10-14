@@ -9,9 +9,9 @@ public abstract class Driver <E extends Cars> {
     private int experience;
     private E vehicle;
 
-    public Driver(String name, String driveLicense, int experience, E vehicle) {
+    public Driver(String name, String typeDriveLicense, int experience, E vehicle) {
         this.name = name;
-        this.typeDriveLicense = driveLicense;
+        setTypeDriveLicense(typeDriveLicense);
         this.experience = experience;
         this.vehicle = vehicle;
     }
@@ -35,8 +35,12 @@ public abstract class Driver <E extends Cars> {
         return typeDriveLicense;
     }
 
-    public void setDriveLicense(String driveLicense) {
-        this.typeDriveLicense = driveLicense;
+    public void setTypeDriveLicense(String typeDriveLicense) {
+        if (typeDriveLicense == null || typeDriveLicense.isEmpty()) {
+            throw new IllegalArgumentException("Необходимо указать тип прав!");
+        } else {
+            this.typeDriveLicense = typeDriveLicense;
+        }
     }
 
     public int getExperience() {

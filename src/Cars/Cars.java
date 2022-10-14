@@ -27,6 +27,7 @@ public abstract class Cars {
     public abstract void endMoving();
 
     public abstract void defineType();
+    public abstract boolean diagnosticCar();
 
     public String getBrand() {
         return brand;

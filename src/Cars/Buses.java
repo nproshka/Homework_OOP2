@@ -49,6 +49,12 @@ public class Buses extends Cars implements Competing{
     }
 
     @Override
+    public boolean diagnosticCar() {
+        System.out.println("Автобус " + getModel() + " " + getBrand() + " в диагностики не требуется");
+        return true;
+    }
+
+    @Override
     public void stayOnPitStop() {
         System.out.println("Это " + getBrand() + " " + getModel() + " встаю на ПитСтоп!");
     }
