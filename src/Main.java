@@ -7,7 +7,7 @@ import Cars.Buses.PlaceCapacity;
 import Cars.Trucks.LoadCapacity;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         EasyCars[] easyCars = new EasyCars[4];
         easyCars[0] = new EasyCars("Volkswagen", "Taos", 1.4, null);
@@ -69,9 +69,9 @@ public class Main {
             System.out.println();
         }
 
-        DriverB vladimir = new DriverB ("Vladimir", "B", 3, easyCars[0]);
-        DriverD andrey = new DriverD ("Andrey", "D", 7, buses[1]);
-        DriverC alexander = new DriverC ("Alexander", "C", 5, trucks[3]);
+        DriverB vladimir = new DriverB("Vladimir", "B", 3, easyCars[0]);
+        DriverD andrey = new DriverD("Andrey", "D", 7, buses[1]);
+        DriverC alexander = new DriverC("Alexander", "C", 5, trucks[3]);
         System.out.println(alexander);
         System.out.println(andrey);
         System.out.println(vladimir);
@@ -80,5 +80,21 @@ public class Main {
         buses[1].defineType();
         trucks[2].defineType();
 
+        System.out.println();
+
+        Registration.register("SmaSh2R", "12345!G", "12345G");
+
+        System.out.println();
+
+        Registration.register("SmaSh2R", "12345G", "123456");
+
+        System.out.println();
+
+        Registration.register("SmaSh!R", "12345!G", "12345G");
+
     }
+
+
+
+
 }
