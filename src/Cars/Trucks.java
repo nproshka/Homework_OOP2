@@ -1,5 +1,7 @@
 package Cars;
 
+import Drivers.Driver;
+
 public class Trucks extends Cars implements Competing {
     public enum LoadCapacity {
         N1("Масса до 3,5 тонн"),
@@ -19,8 +21,8 @@ public class Trucks extends Cars implements Competing {
 
     private final LoadCapacity loadCapacity;
 
-    public Trucks(String brand, String model, double engineCapacity, LoadCapacity loadCapacity) {
-        super(brand, model, engineCapacity);
+    public Trucks(String brand, String model, double engineCapacity, Driver<?> driver, LoadCapacity loadCapacity) {
+        super(brand, model, engineCapacity, driver);
         this.loadCapacity = loadCapacity;
     }
 

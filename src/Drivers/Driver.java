@@ -15,6 +15,11 @@ public abstract class Driver <E extends Cars> {
         this.experience = experience;
         this.vehicle = vehicle;
     }
+    public Driver(String name, String typeDriveLicense, int experience) {
+        this.name = name;
+        setTypeDriveLicense(typeDriveLicense);
+        this.experience = experience;
+    }
 
     public void startMoving(E car) {
         System.out.println("Начинаю движение на машине ");
@@ -60,6 +65,6 @@ public abstract class Driver <E extends Cars> {
 
     @Override
     public String toString() {
-        return "Водитель " + getName() + " с категорией " + getTypeDriveLicenseDriveLicense() + ", управляет автомобилем "+ getVehicle() + " и будет учавствовать в заезде";
+        return "Водитель " + getName() + " с категорией " + getTypeDriveLicenseDriveLicense() + " и будет учавствовать в заезде";
     }
 }

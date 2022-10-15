@@ -1,5 +1,6 @@
 package Cars;
 
+import Drivers.Driver;
 import org.w3c.dom.ls.LSOutput;
 
 public class Buses extends Cars implements Competing{
@@ -23,11 +24,10 @@ public class Buses extends Cars implements Competing{
 
     private final PlaceCapacity placeCapacity;
 
-    public Buses(String brand, String model, double engineCapacity, PlaceCapacity placeCapacity) {
-        super(brand, model, engineCapacity);
+    public Buses(String brand, String model, double engineCapacity, Driver<?> driver, PlaceCapacity placeCapacity) {
+        super(brand, model, engineCapacity, driver);
         this.placeCapacity = placeCapacity;
     }
-
 
     @Override
     public void startMoving() {

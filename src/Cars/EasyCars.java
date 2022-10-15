@@ -1,5 +1,7 @@
 package Cars;
 
+import Drivers.Driver;
+
 import java.util.Locale;
 
 public class EasyCars extends Cars implements Competing  {
@@ -7,8 +9,8 @@ public class EasyCars extends Cars implements Competing  {
 
     private final Body body;
 
-    public EasyCars(String brand, String model, double engineCapacity, Body body) {
-        super(brand, model, engineCapacity);
+    public EasyCars(String brand, String model, double engineCapacity, Driver<?> driver, Body body) {
+        super(brand, model, engineCapacity, driver);
         this.body = body;
     }
 
@@ -53,5 +55,10 @@ public class EasyCars extends Cars implements Competing  {
 
     public Body getBody() {
         return body;
+    }
+
+    @Override
+    public String toString() {
+        return getBrand() + " " + getModel() + " объём двигателя - " + getEngineCapacity() + "; Тип кузова - " + getBody();
     }
 }
