@@ -29,6 +29,11 @@ public class EasyCars extends Cars implements Competing  {
     }
 
     @Override
+    public void repairCar() {
+        System.out.println("Провожу ремонт " + getBrand() + " " + getModel());
+    }
+
+    @Override
     public void startMoving() {
         System.out.println("Начинаю движение");
     }

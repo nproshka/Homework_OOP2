@@ -12,11 +12,11 @@ public class Mechanic<E extends Cars> {
         this.company = company;
     }
 
-    public void performMaintenance(E car) {
-        System.out.println("Провожу тех обслуживание " + car.getBrand() + " " + car.getModel());
+    public boolean performMaintenance(E car) {
+        return car.diagnosticCar();
     }
     public void repairCar (E car) {
-        System.out.println("Провожу ремонт " + car.getBrand() + " " + car.getModel());
+        car.repairCar();
     }
 
     public String getName() {

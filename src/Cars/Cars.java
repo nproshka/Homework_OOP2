@@ -47,6 +47,9 @@ public abstract class Cars {
     public abstract void defineType();
     public abstract boolean diagnosticCar();
 
+    public abstract void repairCar();
+
+
     public String getBrand() {
         return brand;
     }

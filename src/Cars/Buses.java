@@ -53,6 +53,9 @@ public class Buses extends Cars implements Competing{
         System.out.println("Автобус " + getModel() + " " + getBrand() + " в диагностики не требуется");
         return true;
     }
+    public void repairCar() {
+        System.out.println("Автобусы в ремонте не нуждаются");
+    }
 
     @Override
     public void stayOnPitStop() {

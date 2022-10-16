@@ -5,8 +5,12 @@ import Drivers.DriverD;
 import Cars.EasyCars.Body;
 import Cars.Buses.PlaceCapacity;
 import Cars.Trucks.LoadCapacity;
+import SuperMarket.SuperMarket;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,7 +34,7 @@ public class Main {
 //        easyCars[0] = new EasyCars("Volkswagen", "Taos", 1.4, null);
 //        easyCars[1] = new EasyCars("Volkswagen", "Tiguan", 1.4, Body.HATCHBACK);
 //        easyCars[2] = new EasyCars("Chevrolet", "Camaro", 6.2, Body.SEDAN);
-        easyCars[3] = new EasyCars("BMW", "X5", 4.4, stepan, Body.HATCHBACK);
+        easyCars[3] = new EasyCars("BMW", "X5", 1.1, stepan, Body.HATCHBACK);
 
         easyCars[3].addSponsor(lykoil, gasprom, redBull);
         easyCars[3].addMechanic(volodya, vadim);
@@ -56,9 +60,14 @@ public class Main {
         List<Cars> cars = List.of(easyCars[3], trucks[1], buses[2]);
 
 
-        for (Cars car : cars) {
-            carInfo(car);
-        }
+//        for (Cars car : cars) {
+//            carInfo(car);
+//        }
+
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.addEasyCar(easyCars[3]);
+        serviceStation.service();
+
 
 
 //
@@ -155,9 +164,55 @@ public class Main {
 
         System.out.println();
 
+        SuperMarket superMarket = new SuperMarket();
+
+        Queue<String> queue1 = new ArrayDeque<>(5);
+        Queue<String> queue2 = new ArrayDeque<>(5);
+
+        superMarket.randomFilling(queue1);
+        superMarket.randomFilling(queue2);
+
+        System.out.println("Первая очередь " + queue1);
+        System.out.println("Первая очередь " + queue2);
+
+        System.out.println();
+
+        superMarket.add("Пупкин Вася", queue1, queue2);
+
+        System.out.println("Первая очередь " + queue1);
+        System.out.println("Первая очередь " + queue2);
+
+        System.out.println();
+
+        superMarket.remove(queue1, queue2);
+        System.out.println("Первая очередь " + queue1);
+        System.out.println("Первая очередь " + queue2);
+
+        example();
 
 
     }
+
+    private static void example() {
+        List<List<String>> biDemArrList = new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            biDemArrList.add(i, new ArrayList<>());
+            for (int j = 0; j < 8; j++) {
+                if ((i + j) % 2 == 1) {
+                    biDemArrList.get(i).add(j, "●");
+                } else {
+                    biDemArrList.get(i).add(j, "◯");
+                }
+            }
+        }
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(biDemArrList.get(i).get(j) + " ");
+            }
+            System.out.println();
+        }
+    }
+
 
     public static void carInfo(Cars car) {
         System.out.println("Автомобилем " + car.getBrand() + " " + car.getModel() + " управляет " + car.getDriver() + ".");
