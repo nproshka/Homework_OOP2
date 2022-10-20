@@ -1,4 +1,5 @@
 import Cars.*;
+import Drivers.Driver;
 import Drivers.DriverB;
 import Drivers.DriverC;
 import Drivers.DriverD;
@@ -7,10 +8,7 @@ import Cars.Buses.PlaceCapacity;
 import Cars.Trucks.LoadCapacity;
 import SuperMarket.SuperMarket;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,14 +18,23 @@ public class Main {
         Mechanic<Buses> genady = new Mechanic<Buses>("Горин Геннадий", "'Вип Авто'");
         Mechanic<Cars> vadim = new Mechanic<Cars>("Шевелев Вадим", "'Всё правильно'");
 
+        Set<Mechanic<?>> mechanics = new HashSet<>(List.of(volodya, vadim, nikita, volodya));
+        System.out.println("Список механиков - " + mechanics);
+
         Sponsor redBull = new Sponsor("Red Bull", 300_000);
         Sponsor gasprom = new Sponsor("Газпром", 1_000_000);
         Sponsor motul = new Sponsor("Motul", 100_000);
         Sponsor lykoil = new Sponsor("Лукойл", 350_000);
 
+        Set<Sponsor> sponsors = new HashSet<>(List.of(redBull, gasprom, motul, lykoil, redBull));
+        System.out.println("Список спонсоров - " + sponsors);
+
         DriverB stepan = new DriverB("Степан", "B", 9);
         DriverC igor = new DriverC("Игорь", "С", 5);
         DriverD roman = new DriverD("Роман", "D", 12);
+
+        Set<Driver<?>> drivers = new HashSet<>(List.of(stepan, igor, roman, igor));
+        System.out.println("Список Водителей - " + drivers);
 
 
         EasyCars[] easyCars = new EasyCars[4];
@@ -57,7 +64,8 @@ public class Main {
         buses[2].addSponsor(redBull, motul, lykoil);
         buses[2].addMechanic(genady, vadim);
 
-        List<Cars> cars = List.of(easyCars[3], trucks[1], buses[2]);
+        Set<Cars> cars = new HashSet<Cars>(List.of(easyCars[3], trucks[1], buses[2], trucks[1]));
+        System.out.println("Список машин учавствующих в гонке следующий - " + cars);
 
 
 //        for (Cars car : cars) {
