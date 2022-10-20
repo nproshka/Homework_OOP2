@@ -158,45 +158,52 @@ public class Main {
 //            System.out.println();
 //        }
 
-
-        DriverD andrey = new DriverD("Andrey", "D", 7, buses[2]);
-        DriverC alexander = new DriverC("Alexander", "C", 5, trucks[1]);
-        DriverB vladimir = new DriverB("Vladimir", "B", 3, easyCars[3]);
-        System.out.println(alexander);
-        System.out.println(andrey);
-        System.out.println(vladimir);
-
+//        DriverD andrey = new DriverD("Andrey", "D", 7, buses[2]);
+//        DriverC alexander = new DriverC("Alexander", "C", 5, trucks[1]);
+//        DriverB vladimir = new DriverB("Vladimir", "B", 3, easyCars[3]);
+//        System.out.println(alexander);
+//        System.out.println(andrey);
+//        System.out.println(vladimir);
+//
 //        easyCars[0].defineType();
 //        buses[1].defineType();
 //        trucks[2].defineType();
 
-        System.out.println();
+//        System.out.println();
+//
+//        SuperMarket superMarket = new SuperMarket();
+//
+//        Queue<String> queue1 = new ArrayDeque<>(5);
+//        Queue<String> queue2 = new ArrayDeque<>(5);
+//
+//        superMarket.randomFilling(queue1);
+//        superMarket.randomFilling(queue2);
+//
+//        System.out.println("Первая очередь " + queue1);
+//        System.out.println("Первая очередь " + queue2);
+//
+//        System.out.println();
+//
+//        superMarket.add("Пупкин Вася", queue1, queue2);
+//
+//        System.out.println("Первая очередь " + queue1);
+//        System.out.println("Первая очередь " + queue2);
+//
+//        System.out.println();
+//
+//        superMarket.remove(queue1, queue2);
+//        System.out.println("Первая очередь " + queue1);
+//        System.out.println("Первая очередь " + queue2);
+//
+//        example();
 
-        SuperMarket superMarket = new SuperMarket();
+        Set<String> equations = new HashSet<>();
 
-        Queue<String> queue1 = new ArrayDeque<>(5);
-        Queue<String> queue2 = new ArrayDeque<>(5);
+        for (int i = 0; i < 16; i++) {
+            equations.add(getRandomEquation());
+        }
 
-        superMarket.randomFilling(queue1);
-        superMarket.randomFilling(queue2);
-
-        System.out.println("Первая очередь " + queue1);
-        System.out.println("Первая очередь " + queue2);
-
-        System.out.println();
-
-        superMarket.add("Пупкин Вася", queue1, queue2);
-
-        System.out.println("Первая очередь " + queue1);
-        System.out.println("Первая очередь " + queue2);
-
-        System.out.println();
-
-        superMarket.remove(queue1, queue2);
-        System.out.println("Первая очередь " + queue1);
-        System.out.println("Первая очередь " + queue2);
-
-        example();
+        System.out.println(equations.toString().replace("[", "").replace("]", "").replace(", ", ""));
 
 
     }
@@ -227,6 +234,12 @@ public class Main {
         System.out.println("Гонку этого автомобиля спонсирует " + car.getSponsors() + ".");
         System.out.println("Тех обслуживание и ремонт проводит" + car.getMechanics() + ".");
         System.out.println();
+    }
+
+    public static String getRandomEquation() {
+        int firstNum = (int) (Math.random() * 8) + 2;
+        int secondNum = (int) (Math.random() * 8) + 2;
+        return firstNum + " * " + secondNum + "\n";
     }
 
 }
