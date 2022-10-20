@@ -8,6 +8,7 @@ import Cars.Buses.PlaceCapacity;
 import Cars.Trucks.LoadCapacity;
 import SuperMarket.SuperMarket;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class Main {
@@ -205,7 +206,24 @@ public class Main {
 
         System.out.println(equations.toString().replace("[", "").replace("]", "").replace(", ", ""));
 
+        Passport vladimir = new Passport(356723, "Пупкин", "Владимир", "Андреевич", LocalDate.now().minusDays(8000));
+        Passport vladimir2 = new Passport(356723, "2", "3", "4", LocalDate.now().minusDays(4000));
+        Passport stepan1 = new Passport(435932, "Алексеев", "Степан", "Михайлович", LocalDate.now().minusDays(12000));
+        Passport nikita1 = new Passport(843910, "Шуматкин", "Никита", LocalDate.now().minusDays(9000));
+        Passport pavel = new Passport(232451, "Никтин", "Павел", "Фёдорович", LocalDate.now().minusDays(18000));
 
+
+        PassportList passportList = new PassportList(new HashSet<>());
+        passportList.addPassport(vladimir);
+        passportList.addPassport(vladimir2);
+        passportList.addPassport(stepan1);
+        passportList.addPassport(nikita1);
+        passportList.addPassport(pavel);
+
+
+        System.out.println(passportList.toString().replace("null", "").replace("[", "").replace("]", "").replace(", ", ""));
+
+        System.out.println(passportList.findPassportFromNumber(232451));
     }
 
     private static void example() {
