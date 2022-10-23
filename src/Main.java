@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ValidationFieldErrorException {
 
         Mechanic<EasyCars> volodya = new Mechanic<EasyCars>("Филин Владимир", "'Легковые автомобили+'");
         Mechanic<Trucks> nikita = new Mechanic<Trucks>("Алексеева Никита", "'Энергия'");

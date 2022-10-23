@@ -9,7 +9,7 @@ public class Passport {
     private String MiddleName;
     private final LocalDate birthDay;
 
-    public Passport(int passportNumber, String surname, String name, String middleName, LocalDate birthDay) {
+    public Passport(int passportNumber, String surname, String name, String middleName, LocalDate birthDay) throws ValidationFieldErrorException {
         setPassportNumber(passportNumber);
         setSurname(surname);
         setName(name);
@@ -17,7 +17,7 @@ public class Passport {
         this.birthDay = birthDay;
     }
 
-    public Passport(int passportNumber, String surname, String name, LocalDate birthDay) {
+    public Passport(int passportNumber, String surname, String name, LocalDate birthDay) throws ValidationFieldErrorException {
         setPassportNumber(passportNumber);
         setSurname(surname);
         setName(name);
@@ -35,14 +35,10 @@ public class Passport {
         return passportNumber;
     }
 
-    public void setPassportNumber(int passportNumber) {
-        try {
+    public void setPassportNumber(int passportNumber) throws ValidationFieldErrorException {
             if (passportNumber <= 0) {
-                throw new IllegalArgumentException("Введите корректный номер паспорта");
+                throw new ValidationFieldErrorException("Введите корректный номер паспорта");
             }
-        } catch (IllegalArgumentException e) {
-            throw new RuntimeException(e.getMessage());
-        }
         this.passportNumber = passportNumber;
     }
 
@@ -50,14 +46,10 @@ public class Passport {
         return Surname;
     }
 
-    public void setSurname(String surname) {
-        try {
+    public void setSurname(String surname) throws ValidationFieldErrorException {
             if (surname == null || surname.isEmpty() || surname.isBlank()) {
-                throw new NullPointerException("Введите фамилию");
+                throw new ValidationFieldErrorException("Введите фамилию");
             }
-        } catch (NullPointerException e) {
-            throw new RuntimeException(e.getMessage());
-        }
         Surname = surname;
     }
 
@@ -66,13 +58,9 @@ public class Passport {
     }
 
     public void setName(String name) {
-        try {
             if (name == null || name.isEmpty() || name.isBlank()) {
                 throw new NullPointerException("Введите Имя");
             }
-        } catch (NullPointerException e) {
-            throw new RuntimeException(e.getMessage());
-        }
         this.name = name;
     }
 
