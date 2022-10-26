@@ -16,16 +16,11 @@ public class PassportList {
 
     public void addPassport(Passport passport) {
 
-        try {
             if (!passportList.contains(passport)) {
                 passportList.add(passport);
-            } else if (passport.hashCode() == passportList.hashCode()) {
+            } else {
                 throw new RuntimeException("Паспорт с номером " + passport.getPassportNumber() + " уже есть в базе данных");
             }
-        } catch (RuntimeException e) {
-            System.out.println(e.getMessage());
-        }
-
     }
 
     public Passport findPassportFromNumber(int passportNumber) {
